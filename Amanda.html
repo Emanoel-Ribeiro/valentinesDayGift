@@ -226,25 +226,26 @@
     }
 
     // Controlar música ambiente
-    let musicaAtiva = true;
-    const audio = new Audio("https://drive.google.com/file/d/1TyUs8qi9fXQpUX70RdFJ90H_r_MJfDTW/view?usp=drive_link");
-    audio.loop = true;
-    audio.volume = 0.15;
-    audio.play().catch(() => {
-      console.log("Autoplay bloqueado, toque a página para ativar o som.");
-    });
+   let musicaAtiva = true;
+  const audio = new Audio("https://docs.google.com/uc?export=download&id=1TyUs8qi9fXQpUX70RdFJ90H_r_MJfDTW");
+  audio.loop = true;
+  audio.volume = 0.15;
 
-    const musicToggleBtn = document.getElementById("musicToggle");
-    musicToggleBtn.onclick = () => {
-      if (musicaAtiva) {
-        audio.pause();
-        musicToggleBtn.textContent = "Ligar Música";
-      } else {
-        audio.play();
-        musicToggleBtn.textContent = "Desligar Música";
-      }
-      musicaAtiva = !musicaAtiva;
-    };
+  audio.play().catch(() => {
+    console.log("Autoplay bloqueado, toque a página para ativar o som.");
+  });
+
+  const musicToggleBtn = document.getElementById("musicToggle");
+  musicToggleBtn.onclick = () => {
+    if (musicaAtiva) {
+      audio.pause();
+      musicToggleBtn.textContent = "Ligar Música";
+    } else {
+      audio.play();
+      musicToggleBtn.textContent = "Desligar Música";
+    }
+    musicaAtiva = !musicaAtiva;
+  };
 
   </script>
 
